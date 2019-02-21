@@ -5,6 +5,8 @@ class Parser
   def self.parse(filename:, data_handler: LogDataHandler)
     data = data_handler.new
     File.open(filename, 'r') do |file|
+      file.each do |line|
+      end
     end
   end
 end
