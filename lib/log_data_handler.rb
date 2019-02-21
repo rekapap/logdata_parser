@@ -11,13 +11,16 @@ class LogDataHandler
   end
 
   # add an uri ip pair to data
+  #
   # parameters: uri,ip
   def process_data(uri, ip)
     @data.key?(uri) ? update_uri(uri, ip) : add_uri(uri, ip)
   end
 
   # returns the total visit list
+  #
   # sorted by most visited
+  #
   # sorted by alphabetical order for the same count
   def total_visits
     @data.map do |uri, ips|
@@ -25,8 +28,10 @@ class LogDataHandler
     end.sort(&@comparison_proc)
   end
 
-  # returns the uniique visit list
+  # returns the unique visit list
+  #
   # sorted by most visited
+  #
   # sorted by alphabetical order for the same count
   def unique_visits
     @data.map { |uri, ips| [uri, ips.size] }.sort(&@comparison_proc)

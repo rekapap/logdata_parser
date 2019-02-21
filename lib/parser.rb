@@ -4,7 +4,8 @@ require_relative 'log_data_handler'
 
 # Responsible parsing a log file
 class Parser
-  # Parses a log a file and returns a logdatahandler file
+  # Parses a log a file and returns a logdata handler file
+  #
   # parameters: filename:, data_handler:
   def self.parse(filename:, data_handler: LogDataHandler)
     data = data_handler.new
