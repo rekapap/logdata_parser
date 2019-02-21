@@ -6,6 +6,7 @@ class Parser
     data = data_handler.new
     File.open(filename, 'r') do |file|
       file.each do |line|
+        uri, ip = line.split
       end
     end
   end
