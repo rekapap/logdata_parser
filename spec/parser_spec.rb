@@ -19,12 +19,12 @@ describe Parser do
       expect(File).to receive(:open).with(filename, 'r').and_yield(file)
       described_class.parse(filename: filename, data_handler: logdata_class)
     end
-    it 'it iterates throught the file' do
+    it 'iterates throught the file' do
       allow(File).to receive(:open).with(filename, 'r').and_yield(file)
       expect(file).to receive(:each)
       described_class.parse(filename: filename, data_handler: logdata_class)
     end
-    it 'it split the lines to uri and ip' do
+    it 'split the lines to uri and ip' do
       allow(File).to receive(:open).with(filename, 'r').and_yield(file)
       allow(file).to receive(:each).and_yield(line)
       expect(line).to receive(:split)
