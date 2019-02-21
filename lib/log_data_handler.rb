@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Handles logdata
 # Stores it and returns data depending on the query
 class LogDataHandler
@@ -13,7 +15,9 @@ class LogDataHandler
   end
 
   def total_visits
-    @data.map { |uri, ips| [uri, ips.values.reduce(:+)] }.sort(&@comparison_proc)
+    @data.map do |uri, ips|
+      [uri, ips.values.reduce(:+)]
+    end.sort(&@comparison_proc)
   end
 
   def unique_visits

@@ -2,7 +2,7 @@ require 'log_data_formatter'
 
 describe LogDataFormatter do
   let(:described_class) { LogDataFormatter }
-  let(:data) { [['uri', 2],['uri2', 1]] }
+  let(:data) { [['uri', 2], ['uri2', 1]] }
   let(:total_visits) { "uri 2 visits.\nuri2 1 visits." }
   let(:unique_visits) { "uri 2 unique visitors.\nuri2 1 unique visitors." }
   describe '.format_total' do

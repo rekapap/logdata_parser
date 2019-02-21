@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'log_data_handler'
 
 # Responsible parsing a log file
