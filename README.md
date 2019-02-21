@@ -12,7 +12,7 @@ Returns the following:
 
 ## Design
 
-- Parser - responsible parsing the file: creating a new `logdata handler`, and passing the records to it
+- Parser - responsible parsing the file: creating a new `logdata handler`, and passing the records to it, returns `logdata handler`
 - LogDataHandler - handles data: stores data, and returns data either total visits or unique visits
 - LogDataFormatter - returns a formatted string from a list
 
