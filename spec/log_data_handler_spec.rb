@@ -10,5 +10,10 @@ describe LogDataHandler do
       subject.process_data(uri, ip)
       expect(data[uri][ip]).to eq(2)
     end
+    it 'adds new uri to data if uri does not exsist' do
+      subject.instance_variable_set(:@data, {})
+      subject.process_data(uri, ip)
+      expect(data[uri][ip]).to eq(1)
+    end
   end
 end
