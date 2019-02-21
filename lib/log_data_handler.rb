@@ -3,10 +3,17 @@
 class LogDataHandler
   def initialize
     @data = {}
+    @comparison_proc = proc { |a, b|
+      a[1] == b[1] ? a[0] <=> b[0] : b[1] <=> a[1]
+    }
   end
 
   def process_data(uri, ip)
     @data.key?(uri) ? update_uri(uri, ip) : add_uri(uri, ip)
+  end
+
+  def total_visits
+    @data.map { |uri, ips| [uri, ips.values.reduce(:+)] }.sort(&@comparison_proc)
   end
 
   private
