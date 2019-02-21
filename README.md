@@ -29,7 +29,7 @@ Folders:
 ```bash
 rdoc
 ```
-2. Open the the the index.html in your browser:
+2. Open the index.html in your browser:
 ```text
 doc/index.html
 ```
