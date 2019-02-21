@@ -15,5 +15,10 @@ describe LogDataHandler do
       subject.process_data(uri, ip)
       expect(data[uri][ip]).to eq(1)
     end
+    it 'updates uri data if uri exsist and ip doesn\'t exsists' do
+      subject.instance_variable_set(:@data, uri => { 'ip2' => 1 })
+      subject.process_data(uri, ip)
+      expect(data[uri][ip]).to eq(1)
+    end
   end
 end

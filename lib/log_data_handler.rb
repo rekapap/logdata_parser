@@ -12,7 +12,7 @@ class LogDataHandler
   private
 
   def update_uri(uri, ip)
-    @data[uri][ip] += 1
+    @data[uri].key?(ip) ? @data[uri][ip] += 1 : @data[uri][ip] = 1
   end
 
   def add_uri(uri, ip)
