@@ -36,5 +36,10 @@ describe Parser do
       expect(logdata).to receive(:process_data).with(uri, ip)
       described_class.parse(filename: filename, data_handler: logdata_class)
     end
+    it 'returns the data object' do
+      allow(File).to receive(:open).with(filename, 'r').and_yield(file)
+      allow(file).to receive(:each).and_yield(line)
+      expect(described_class.parse(filename: filename, data_handler: logdata_class)).to eq(logdata)
+    end
   end
 end

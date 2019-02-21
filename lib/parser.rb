@@ -10,5 +10,6 @@ class Parser
         data.process_data(uri, ip)
       end
     end
+    data
   end
 end
