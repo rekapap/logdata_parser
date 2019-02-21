@@ -27,4 +27,10 @@ describe LogDataHandler do
       expect(subject.total_visits).to eq([[uri, 2], ['uri2', 1]])
     end
   end
+  describe '#unique_visits' do
+    it 'returns the unique visits per uri' do
+      subject.instance_variable_set(:@data, uri => { ip => 2 }, 'uri2' => { ip => 1 })
+      expect(subject.unique_visits).to eq([[uri, 1], ['uri2', 1]])
+    end
+  end
 end

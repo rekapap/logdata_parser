@@ -16,6 +16,10 @@ class LogDataHandler
     @data.map { |uri, ips| [uri, ips.values.reduce(:+)] }.sort(&@comparison_proc)
   end
 
+  def unique_visits
+    @data.map { |uri, ips| [uri, ips.size] }.sort(&@comparison_proc)
+  end
+
   private
 
   def update_uri(uri, ip)
