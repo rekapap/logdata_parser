@@ -4,5 +4,7 @@ require_relative 'log_data_handler'
 class Parser
   def self.parse(filename:, data_handler: LogDataHandler)
     data = data_handler.new
+    File.open(filename, 'r') do |file|
+    end
   end
 end
